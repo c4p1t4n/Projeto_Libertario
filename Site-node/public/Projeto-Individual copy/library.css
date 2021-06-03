@@ -1,0 +1,17 @@
+.tb_library{
+    margin-left:20%;
+    margin-top:3%;
+}
+.livro img{
+    width: 50%;
+    
+}
+.titulo{
+    color:#F0C802;
+    margin: auto;
+}
+.nome_autor{
+    margin: auto;
+    color:#FFEF86;
+
+}

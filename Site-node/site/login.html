@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <!--class menu is the side bar-->
+        <div class="menu">
+            <div class="itens_menu">
+                <a class="menu_titulo" href="./index.html">Home</a>
+                <ul class="list_itens" >
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./login">Login</a>
+                    <li class="li_item"><a class="link_ancor" href="./registro.html">Register</a></li>
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
+                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>
+                    <li class="li_item"><select class="link_ancor">
+                        <option value="Trilhas">Roads</option>
+                        <option value="Economic">Economic</option>
+                        <option value="ethic">Ethic</option>
+                    </select></li>                                
+                    <li class="li_item "><a class="link_ancor" href="/forms/">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+ 
+    
+
+    
+    <div class="div_form_login">
+      <div class="form">
+        
+        <div class="login_header">
+            <h3>LOGIN</h3>            
+        </div>
+        
+       
+        <form id="form_login"  method="post" onsubmit="return entrar()">
+
+            <input type="text"  placeholder="email" name="email">
+            <br>
+            
+            <input id ="in_senha"type="password"  placeholder="senha" name="senha">
+            <br>
+
+            <button  >Entrar</button>
+            <p class="message">Registrar <a href="#">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script>
+ function entrar() {
+
+
+        
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'www.google.com';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                   
+                });
+            }
+        });
+
+        return false;
+    }
+
+  
+
+
+
+
+
+</script>

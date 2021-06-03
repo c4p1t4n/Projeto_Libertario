@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/library.css">
+
+</head>
+
+<body onload="load()">
+    <div class="container">
+        <!--class menu is the side bar-->
+        <div id="menu" class="menu">
+            <div class="itens_menu">
+                <a class="menu_titulo" href="./index.html">Home</a>
+                <ul class="list_itens">
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./login.html">Login</a>
+                    <li class="li_item"><a class="link_ancor" href="./registro.html">Register</a></li>
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
+                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div id="corpo" class="div_pesquisa">
+            <center><input name="buscaNomeLivro" id="inputBuscaNomeLivro"> <button
+                    onclick="buscaLivroBanco()">Pesquisar</button>
+                <select id="slcTema" onclick="buscaLivroTema()">
+                    <option value=""></option>
+                    <option value="economia">Economia</option>
+                    <option value="etica">Ética</option>
+                    <option value="politica">Politica</option>
+                </select>
+
+
+            </center>
+        </div>
+
+        <table class="tb_library">
+            <tbody id="tabelaLivros">
+                <tr id="trPrimeira">
+                    <td id="livroAnatomiaEstado" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/317S+OR0pDL._SX329_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/2015/10/A-anatomia-do-estado.pdf">A anatomia do estado</a></h4>
+                            <h5 class="nome_autor" >Autor:Murray rothbard</h5>
+                            <button onclick="Favorito(100)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td id="livroPrincipiosEconomiaPolitica" class="livro">
+                        <center><img
+                                src="https://rothbardbrasil.com/wp-content/uploads/2021/02/capa-Principios-Menger-299x450.jpg">
+                            <h4 class="titulo"><a href="https://rothbardbrasil.com/wp-content/uploads/2021/02/Principios-de-Economia-Politica-Carl-Menger.pdf">Princípios de Economia Política</a></h4>
+                            <h5 class="nome_autor">Autor:Carl Menger.</h5>
+                            <button onclick="Favorito(109)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td id="livroDemocraciaDeusFalhou" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41DuwT3h8OL._SX330_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/deus-que-falhou.pdf">Democracia – o deus que falhou</a></h4>
+                            <h5 class="nome_autor">Autor: Hans-Hermann Hoppe</h5>
+                            <button onclick="Favorito(102)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td id="livroCienciaEconomicaMetodoAustriaco" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/510dv2fcCtL._SX335_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/A%20Ciencia%20Economica%20e%20o%20Metodo%20Austriaco%20-%20WEB.pdf">A ciência econômica e o método austríaco</a></h4>
+                            <h5 class="nome_autor">Autor:Hans-Hermann Hoppe </h5>
+                            <button onclick="Favorito(103)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                </tr>
+
+
+                <tr id="trSegunda">
+                    <td class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41zMb5xXVUL._SX330_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/seis-licoes.pdf">As seis lições</a></h4>
+                            <h5 class="nome_autor">Autor: Ludwig von Mises</h5>
+                            <button onclick="Favorito(105)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                        
+                    </td>
+
+                    <td id="livroDefendendoIndefensavel" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41i1tgaSzzL._SX315_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="https://rothbardbrasil.com/defendendo-o-indefensavel/">Defendendo o indefensável</a></h4>
+                            <h5 class="nome_autor">Autor:Walter Brock</h5>
+                            <button onclick="Favorito(107)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41WORX1AuEL._SX335_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/acao-humana.pdf">Ação humana</a></h4>
+                            <h5 class="nome_autor">Autor:Ludwig von Mises </h5>
+                            <button onclick="Favorito(106)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td id="livroCaminhoServidao" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41vP8tvLhgL._SX325_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/caminhodaservidao.pdf"> O caminho da servidão</a></h4>
+                            <h5 class="nome_autor">Autor:F. A. Hayek </h5>
+                            <button onclick="Favorito(110)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+                </tr>
+                <tr id="trTerceira">
+                    <td id="livroSegundoTratadoGovernoCivil" class="livro">
+                        <center><img src="https://m.media-amazon.com/images/I/41sznoT+QVL.jpg">
+                            <h4 class="titulo"><a><a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxmaWxvc29maWFwb3B1bGFyfGd4OjdhMzYwOGQ0NTQwZDNjNjk">Segundo Tratado Do Governo Civil</a></h4>
+                            <h5 class="nome_autor">Autor:John Locke</h5>
+                            <button onclick="Favorito(111)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td id="livroTratadoNaturezaHumana" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41SUEeucX+L._SX339_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="https://books.google.com.br/books?id=0FrA3e4MJMAC&printsec=frontcover&hl=pt-BR#v=onepage&q&f=false">Tratado da natureza humana</a></h4>
+                            <h5 class="nome_autor">Autor: David Hume </h5>
+                            <button onclick="Favorito(110)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/41Ey5fl6kRL._SX335_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/A%20etica%20da%20liberdade%20-%20miolo%20capa%20brochura_2013.pdf">A ética da liberdade </a></h4>
+                            <h5 class="nome_autor">Autor:Murray rothbard</h5>
+                            <button onclick="Favorito(113)" class="classe-botoes">Adicionar no Favoritos</button>
+                        </center>
+                    </td>
+
+                    <td id="livroOqueDeveSerFeito" class="livro">
+                        <center><img
+                                src="https://images-na.ssl-images-amazon.com/images/I/51SPxrezZPL._SX331_BO1,204,203,200_.jpg">
+                            <h4 class="titulo"><a href="http://rothbardbrasil.com/wp-content/uploads/arquivos/oquedeveserfeito.pdf">O que deve ser feito </a></h4>
+                            <h5 class="nome_autor">Autor:Hans-Hermann Hoppe</h5>
+                            <button onclick="Favorito(116)" class="classe-botoes">Adicionar no Favoritos</button>
+
+                        </center>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
+<script>
+
+    // busca de livros dentro do select por tema
+    function buscaLivroTema() {
+        var tema = slcTema.value
+
+        fetch(`/livro//buscaLivrosTema/${tema}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        if (resposta.length != 0) {
+
+                            LivroslistaTema(resposta);
+                        }
+                        else {
+                            alert("Nenhum Livro encontrado")
+                        }
+
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção Dos Livros: ${error.message}`);
+            });
+
+    }
+
+
+
+
+
+
+
+    // busca todos os livros do banco
+    function buscaLivroBanco() {
+        fetch("/livro/Livros")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        if (resposta.length != 0) {
+
+                            LivroslistaPesquisa(resposta);
+                        }
+                        else {
+                            alert("Nenhum Livro encontrado")
+                        }
+
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção Dos Livros: ${error.message}`);
+            });
+    }
+    var listaLivros = []
+    // adiciona os Livros a lista listaLivros
+    function LivroslistaPesquisa(resposta) {
+
+        for (let index = 0; index <= resposta.length - 1; index++) {
+            nome = resposta[index].nomeLivro;
+
+            listaLivros.push(nome);
+
+
+        }
+        buscaLivroPagina()
+
+
+    }
+    function LivroslistaTema(resposta) {
+
+        for (let index = 0; index <= resposta.length - 1; index++) {
+            nome = resposta[index].nomeLivro;
+
+            listaLivros.push(nome);
+
+
+        }
+        LivroslistaBusca(resposta);
+
+
+    }
+    // busca os livros solicitados na barra pesquisar
+
+    function buscaLivroPagina() {
+        var buscaNomeLivro = inputBuscaNomeLivro.value;
+        fetch(`/livro/buscaLivros/${buscaNomeLivro}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        if (resposta.length != 0) {
+                            LivroslistaBusca(resposta);
+                        }
+                        else {
+                            alert("Nenhum Livro encontrado")
+                        }
+
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção Dos Livros: ${error.message}`);
+            });
+    }
+
+
+
+
+
+
+
+
+    // adiciona os livros a pagina
+    var listaLivrosBusca = [];
+    var listaImagens = [];
+    var listaAutor = []
+    var listaId = []
+    var listaLinkLivro = []
+    var listaFinalizado = []
+    function LivroslistaBusca(resposta) {
+        trPrimeira.innerHTML = "";
+        trSegunda.innerHTML = "";
+        trTerceira.innerHTML = "";
+        listaLivrosBusca = [];
+        listaImagens = [];
+        listaAutor = [];
+        listaId = [];
+        listaFinalizado = [];
+        listaLinkLivro = [];
+        for (let index = 0; index <= resposta.length - 1; index++) {
+            var nome = resposta[index].nomeLivro;
+            var imagem = resposta[index].linkImagem;
+            var nomeAutor = resposta[index].nomeAutor;
+            var idLivro = resposta[index].idLivro;
+            var linkLivro = resposta[index].linkLivro
+            
+            listaLivrosBusca.push(nome);
+            listaImagens.push(imagem)
+            listaAutor.push(nomeAutor)
+            listaId.push(idLivro)
+            listaLinkLivro.push(linkLivro)
+           
+
+
+
+        }
+
+
+
+        console.log(listaLivrosBusca)
+        for (let index = 0; index <= listaLivrosBusca.length - 1; index++) {
+            console.log(index)
+            var nome = listaLivrosBusca[index];
+            console.log(nome)
+            var imagem = listaImagens[index];
+            console.log(imagem)
+            var nomeAutor = listaAutor[index];
+            var idLivro = listaId[index];
+            var linkLivro = listaLinkLivro[index]
+           
+            console.log(nomeAutor)
+            if (index <= 3) {
+
+                trPrimeira.innerHTML += `<td id="livroOqueDeveSerFeito" class="livro">
+                        <center><img
+                                src="${imagem}">
+                            <h4 class="titulo"><a href="${linkLivro}">${nome} </a></h4>
+                            <h5 class="nome_autor">Autor:${nomeAutor}</h5>
+                            <button  onclick="Favorito(${idLivro})" class="classe-botoes" >Adicionar no Favoritos</button>
+                        </center>
+                    </td>`
+            }
+            else if (index <= 8) {
+                
+                trSegunda.innerHTML += `<td id="livroOqueDeveSerFeito" class="livro">
+                        <center><img
+                                src="${imagem}">
+                            <h4 class="titulo"><a href="${linkLivro}">${nome} </a></h4>
+                            <h5 class="nome_autor">Autor:${nomeAutor}</h5>
+                            <button  onclick="Favorito(${idLivro})" class="classe-botoes" >Adicionar no Favoritos</button>
+                        </center>
+                    </td> `
+
+            }
+            else {
+
+                trTerceira.innerHTML += `<td id="livroOqueDeveSerFeito" class="livro">
+                        <center><img
+                                src="${imagem}">
+                            <h4 class="titulo"><a href="${linkLivro}">${nome} </a></h4>
+                            <h5 class="nome_autor">Autor:${nomeAutor}</h5>
+                            <button onclick="Favorito(${idLivro})" class="classe-botoes" >Adicionar no Favoritos</button>
+                        </center>
+                    </td> `
+
+            }
+
+        }
+
+
+
+
+
+    }
+
+    var listaLivrosFavoritos = []
+    function Favorito(LivroFavorito) {
+        listaLivrosFavoritos = []
+        listaLivrosFavoritos.push(LivroFavorito)
+        var idUsuario = sessionStorage.id_usuario_meuapp
+        console.log(idUsuario)
+       
+
+            for (let index = 0; index <= listaLivrosFavoritos.length - 1; index++) {
+                var livroFav = listaLivrosFavoritos[index]
+
+                fetch(`/livro/livrosFavoritos/${livroFav}/${idUsuario}`, {
+                    method: "POST",
+                }).then(function (response) {
+
+                    if (response.ok) {
+
+                        alert("livro adicionado com sucesso")
+
+                    } else {
+                        alert("Livro ja adicionado aos favoritos")
+                        console.log('Erro de cadastro!');
+                        response.text().then(function (resposta) {
+                            div_erro.innerHTML = resposta;
+                        });
+
+                    }
+                });
+
+                return false;
+            }
+
+            
+
+        }
+    
+
+
+    function load() {
+        var idUsuario = sessionStorage.id_usuario_meuapp
+        if (idUsuario == null) {
+            alert("Efetue  login")
+            window.location.href = 'login.html';
+        }
+        else {
+            menu.innerHTML = `  <div class="itens_menu">
+                <a class="menu_titulo" href="./index.html">Home</a>
+                <ul class="list_itens" >
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./favoritos.html">Favorites</a>
+                    
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
+                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>                                                   
+                    <li class="li_item "><a class="link_ancor" href="./metricas.html">Analitics</a></li>
+                    <li class="li_item "><a class="link_ancor" onclick="sair()" >Exit</a></li>
+                </ul>
+            </div>
+            
+             `
+
+
+
+
+        }
+    }
+    function sair() {
+        confirmacaoSaida = confirm("Deseja mesmo sair")
+        if (confirmacaoSaida == true) {
+        
+        window.location.href = 'index.html';
+        sessionStorage.clear();
+        }else{
+            
+        }
+        
+
+    }
+
+</script>

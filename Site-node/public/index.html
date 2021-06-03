@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body onload="load()">
+    <!--Container for align all itens in site-->
+    <div class="container">
+        <!--class menu is the side bar-->
+        <div id="menu" class="menu">
+            <div class="itens_menu">
+                <a class="menu_titulo" href="./index.html">Home</a>
+                <ul class="list_itens">
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./login.html">Login</a>
+                    <li class="li_item"><a class="link_ancor" href="./registro.html">Register</a></li>
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
+                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_body">
+        <!--Header of the page-->
+        <div class="header">
+            <h1>The Austro-libertarian</h1>
+            <h2>Uma visão sobre economia e etica</h2>
+
+        </div>
+        <!--The main body-->
+        <div class="main">
+            <h2>Proposito desse site</h2>
+            <p>Esse site tem como objetivo dar uma introdução a respeito da escola austriaca e da filosofia libertaria
+               </p>
+            <h2>O que é Libertarianismo?</h2>
+            <p>Libertarianismo é uma corrente filosofica,politica,etica que tem como fonte fortes referencias da escola austriaca de economia   </p>
+            <h2>Oque é a escola austriaca de economia?</h2>
+            <p>A Escola Austríaca de Economia é uma das mais emblemáticas  	das 	escolas econômicas, que se estruturou a partir do século 	XIX.	Essa 	escola ficou conhecida por esse nome pois seus 	principais 	contribuintes são de origem austríaca e por ter sido 	desenvolvida,	sobretudo, no ambiente acadêmico da cidade de 	Viena, capital da 		Áustria.</p>
+        </div>
+       
+    </div>
+</body>
+
+</html>
+
+<script>
+    function load(){
+        var idUsuario = sessionStorage.id_usuario_meuapp
+        console.log(idUsuario)
+        if (idUsuario == null) {
+            
+        }
+        else{
+            menu.innerHTML = `  <div class="itens_menu">
+                <a class="menu_titulo" href="./index.html">Home</a>
+                <ul class="list_itens" >
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./favoritos.html">Favorites</a>
+                    
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
+                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>                                                   
+                    <li class="li_item "><a class="link_ancor" href="./metricas.html">Analitics</a></li>
+                    <li class="li_item "><a class="link_ancor" onclick="sair()" >Exit</a></li>
+                </ul>
+            </div>            
+             `
+
+
+
+        }
+    }
+
+
+
+    function sair() {
+        confirmacaoSaida = confirm("Deseja mesmo sair")
+        if (confirmacaoSaida == true) {
+            
+            window.location.href = 'index.html';
+            sessionStorage.clear();
+        } else {
+
+        }
+    }
+</script>

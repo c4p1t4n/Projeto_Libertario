@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body class="imagem_body">
+    <div class="container">
+        <!--class menu is the side bar-->
+        <div class="menu">
+            <div class="itens_menu">
+                <a class="menu_titulo" href="./index.html">Home</a>
+                <ul class="list_itens" >
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./login.html">Login</a>
+                    <li class="li_item"><a class="link_ancor" href="./registro.html">Register</a></li>
+                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
+                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>
+                    <li class="li_item"><select class="link_ancor">
+                        <option value="Trilhas">Roads</a></option>
+                        <option value="Economic"><a href=""></a>Economic</option>
+                        <option value="ethic"><a href=""></a>Ethic</option>
+                    </select></li>                                
+                    <li class="li_item "><a class="link_ancor" href="/forms/">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+
+   
+   <div class="div_form_cadastro">
+    <div class="form">
+      
+      <div class="login_header">
+          <h3>Cadastro</h3>            
+      </div>
+      
+     
+      <form id="form_cadastro" class="form_cadastro" method="post" onsubmit="return verificaoCadastrar()">
+        Nome completo:
+        <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
+        <br>
+        Email:
+        <input id="inputEmail" type="text" name="email" class="input-padrao" placeholder="Email" required minlength="4">
+        <br>
+        Confirmação de email:
+        <input id="inputConfirmacaoEmail" type="text"  class="input-padrao" placeholder="Email" required minlength="4">                      
+        <br>
+        Senha:
+        <input id="inputSenha" type="password" name="senha" class="input-padrao" placeholder="***************" required minlength="4">
+        <br>
+        Confirmação de senha:
+        <input id="inputConfirmacaoSenha" class="input-padrao" placeholder="Confirmação Email" required minlength="4">
+        
+        <button type="submit"  value="Cadastrar" >Cadastrar</button>
+        <p class="message"> <a href="#">Login</a></p>
+    </form>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+   
+  <script>
+
+ function verificaoCadastrar(){
+        var email = inputEmail.value;
+        var confirmacaoEmail = inputConfirmacaoEmail.value;
+        var senha = inputSenha.value;
+        var confirmacaoSenha = inputConfirmacaoSenha.value;
+        if (email != confirmacaoEmail){
+            if (email.indexOf("@") != -1 && email.indexOf(".com") != -1){
+                alert("Digite um email valido")
+            }else{
+            alert("Emails não coincidem")
+            console.log("aqui")
+            }
+        }
+        else if(senha != confirmacaoSenha){
+            alert("Senhas não coincidem")
+            console.log("aqui ali")
+        }
+        else{
+            alert("deu certo")
+            cadastrar()
+        }
+    }
+ function cadastrar() {
+        
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                
+            }
+        });
+
+        return false;
+    }
+
+
+
+  </script>
+  
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
