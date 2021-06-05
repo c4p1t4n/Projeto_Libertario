@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-	<script src="chart.js"></script>    
+	<script src="scripts/chart.js"></script>    
     <link rel="stylesheet" href="css/style.css">
     
     
@@ -36,90 +36,5 @@
     
 </body>
 </html>
-<script>
-const labelsBar = [
-  'Politica',
-  'Etica',
-  'Economia',
-  'Filosofia'
-  ];
-  const dataBar = {
-    labels: labelsBar,
-    datasets: [{
-      label: 'Media de paginas por tema de livro',
-      backgroundColor: [
-      '#fd7e14',
-      '#F0C802',
-      '#FFEF86',
-      'rgba(255, 205, 86, 0.7)',
-    ],
-    borderColor: [
-    'rgb(255, 99, 132)',
-      'rgb(47, 188, 0)',
-      'rgb(255, 205, 86)',
-      'rgb(255, 205, 86)',
-    ],
-    borderWidth: 1,
-    data: [211, 310,388,365],
-    }]
-  };
-
-  const configBar = {
-  type: 'bar',
-  data: dataBar,
-  options: {
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  },
-  };
-
-  var myChartBar = new Chart(
-    document.getElementById('myChartBar'),
-    configBar
-  );
-
-  function load() {
-        var idUsuario = sessionStorage.id_usuario_meuapp
-        if (idUsuario == null) {
-            alert("Efetue  login")
-            window.location.href = 'login.html';
-        }
-        else {
-            menu.innerHTML = `  <div class="itens_menu">
-                <a class="menu_titulo" href="./index.html">Home</a>
-                <ul class="list_itens" >
-                    <li class="li_item item_divisor"><a class="link_ancor" href="./favoritos.html">Favorites</a>
-                    
-                    <li class="li_item item_divisor"><a class="link_ancor" href="./library.html">Library</a></li>
-                    <li class="li_item "><a class="link_ancor" href="./timeline.html">Timeline</a></li>                                                   
-                    <li class="li_item "><a class="link_ancor" href="./metricas.html">Analitics</a></li>
-                    <li class="li_item "><a class="link_ancor" onclick="sair()" >Exit</a></li>
-                </ul>
-            </div>
-            
-             `
-
-
-
-
-        }
-    }
-    function sair() {
-        confirmacaoSaida = confirm("Deseja mesmo sair")
-        if (confirmacaoSaida == true) {
-        
-        window.location.href = 'index.html';
-        sessionStorage.clear();
-        }else{
-            
-        }
-        
-
-    }
-
-
-</script>
+<script src="scripts/metricas.js"></script>
+<script src="scripts/load.js"></script>
