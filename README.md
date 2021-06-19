@@ -91,6 +91,7 @@ cd Projeto_Libertario/Site-node/
  ``` 
 npm start
 ```
+ <h2 align="center">Prontinho 😉</h2>
 # Informações do autor
   
 
@@ -101,4 +102,4 @@ npm start
 <a href="https://github.com/c4p1t4n" title="Github"><b>Léo Igor Nunes</b> </a><br>
 <a href="https://www.linkedin.com/in/leo-igor-nunes-de-oliveira-aa43641a5/"><img src="https://img.icons8.com/ios-filled/64/000000/linkedin.png"/></a>
 
-<h2 align="center">Até Mais!!!</h2>
+
