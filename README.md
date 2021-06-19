@@ -91,8 +91,9 @@ cd Projeto_Libertario/Site-node/
  ``` 
 npm start
 ```
+ 
  <h2 align="center">Prontinho 😉</h2>
-# Informações do autor
+
   
 
   
