@@ -1,15 +1,15 @@
 function verificaoCadastrar() {
-    
-    
+    verificarEmail();
+    verificarSenha()
     
    
-};
+}
 
 function verificarEmail() {
     var email = inputEmail.value;
     var confirmacaoEmail = inputConfirmacaoEmail.value;
     if (email != confirmacaoEmail) {
-        if (email.indexOf("@") == -1 && email.indexOf(".com") == -1 || confirmacaoEmail.indexOf(".com") && confirmacaoEmailindexOf("@")) {
+        if (email.indexOf("@") == -1 && email.indexOf(".com") == -1 || confirmacaoEmail.indexOf(".com") && confirmacaoEmail.indexOf("@")) {
             alert("Digite um email valido")
 
         } else {
@@ -19,10 +19,11 @@ function verificarEmail() {
 
     }
     else{
-        verificarSenha()
+        verificarSenha();
     }
 
 }
+
 function verificarSenha(){
     var senha = inputSenha.value;
     var confirmacaoSenha = inputConfirmacaoSenha.value;
@@ -33,29 +34,10 @@ function verificarSenha(){
     }
     else {
 
-        cadastrar()
+        cadastrar();
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function cadastrar() {
 
@@ -69,15 +51,7 @@ function cadastrar() {
 
             window.location.href = './login.html';
 
-        } else {
-
-            ('Erro de cadastro!');
-            response.text().then(function (resposta) {
-                div_erro.innerHTML = resposta;
-            });
-
-
-        }
+        } 
     });
 
     return false;
