@@ -1,23 +1,25 @@
 
 /* Menu */
 
-/*configs of side bar*/
+/* configs of side bar*/
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+
 .menu {
-    left: 150px;
-    width: 150px;
-    margin: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000;
-    background: #191818;
-    overflow-y: auto;
-    box-shadow:3px 0px 19px 0px #ffeb3bc4;
+  left: 150px;
+  width: 150px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #191818;
+  overflow-y: auto;
+  box-shadow:3px 0px 19px 0px #ffeb3bc4;
 
 }
+
 body{
     background-color: #121212;
     overflow-y: auto;
