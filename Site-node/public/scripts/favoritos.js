@@ -1,21 +1,30 @@
 
-var listaLivros = []
+var listaLivros = [];
+function LivroslistaPesquisa(resposta) {
 
+    for (let index = 0; index <= resposta.length - 1; index++) {
+        nome = resposta[index].nomeLivro;
+        listaLivrosFavoritos.push(nome);
+
+
+    }
+    LivroslistaBusca(resposta)
+
+
+}
 
 
 
 // busca todos os livros Favoritos
 function buscaLivroFavoritos() {
-    var idUsuarioFav = sessionStorage.id_usuario_meuapp
+    var idUsuarioFav = sessionStorage.id_usuario_meuapp;
 
 
     fetch(`/livro/buscaLivrosFavoritos/${idUsuarioFav}`)
         .then(resposta => {
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                    if (resposta.length != 0) {
+                    if (resposta.length !== 0) {
 
                         LivroslistaPesquisa(resposta);
                     }
@@ -103,20 +112,9 @@ function buscaLivroPagina() {
 }
 
 
-var listaLivrosFavoritos = []
+var listaLivrosFavoritos = [];
 // adiciona os Livros a lista listaLivros
-function LivroslistaPesquisa(resposta) {
 
-    for (let index = 0; index <= resposta.length - 1; index++) {
-        nome = resposta[index].nomeLivro;
-        listaLivrosFavoritos.push(nome);
-
-
-    }
-    LivroslistaBusca(resposta)
-
-
-}
 
 
 
@@ -125,7 +123,7 @@ function LivroslistaPesquisa(resposta) {
 // adiciona os livros a pagina
 var listaLivrosBusca = [];
 var listaImagens = [];
-var listaAutor = []
+var listaAutor = [];
 var listaLinkLivro = []
 
 function LivroslistaBusca(resposta) {
