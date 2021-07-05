@@ -27,7 +27,7 @@ router.get('/Livros', function (req, res, next) {
 
 router.get('/buscaLivros/:buscaNomeLivro', function (req, res, next) {
 
-    var buscaNomeLivro = req.params.buscaNomeLivro
+    var buscaNomeLivro = req.params.buscaNomeLivro;
 
     console.log(buscaNomeLivro);
 
@@ -76,8 +76,8 @@ router.get('/buscaLivrosTema/:tema', function (req, res, next) {
 //  Pesquisa livros Favoritos
 router.post('/livrosFavoritos/:livroFav/:idUsuario', function (req, res, next) {
 
-    var idUsuario = req.params.idUsuario
-    var livroFav = req.params.livroFav
+    var idUsuario = req.params.idUsuario;
+    var livroFav = req.params.livroFav;
 
 
 
@@ -101,7 +101,7 @@ router.post('/livrosFavoritos/:livroFav/:idUsuario', function (req, res, next) {
 // busca todos os livros Favoritos
 router.get('/buscaLivrosFavoritos/:idUsuarioFav', function (req, res, next) {
 
-    var idUsuarioFav = req.params.idUsuarioFav
+    var idUsuarioFav = req.params.idUsuarioFav;
    
     let instrucaoSql = `select tbLivrosFavoritos.* ,
                                 tbLivros.* ,
@@ -131,8 +131,8 @@ router.get('/buscaLivrosFavoritos/:idUsuarioFav', function (req, res, next) {
 
 router.get('/buscaLivrosFavoritosTema/:idUsuarioFav/:tema', function (req, res, next) {
 
-    var idUsuarioFav = req.params.idUsuarioFav
-    var tema = req.params.tema
+    var idUsuarioFav = req.params.idUsuarioFav;
+    var tema = req.params.tema;
     let BuscaLivroFavoritoTemaSql = `select tbLivrosFavoritos.* ,
                                 tbLivros.* ,
                                 tbUsuarios.* ,
@@ -161,8 +161,8 @@ router.get('/buscaLivrosFavoritosTema/:idUsuarioFav/:tema', function (req, res, 
 
 router.get('/buscaLivrosFavoritosBarra/:idUsuarioFav/:buscaNomeLivro', function (req, res, next) {
 
-    var idUsuarioFav = req.params.idUsuarioFav
-    var buscaNomeLivro = req.params.buscaNomeLivro
+    var idUsuarioFav = req.params.idUsuarioFav;
+    var buscaNomeLivro = req.params.buscaNomeLivro;
     let buscaLivrosFavoritosSql = `select tbLivrosFavoritos.* ,
                                 tbLivros.* ,
                                 tbUsuarios.* ,
