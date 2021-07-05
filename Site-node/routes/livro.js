@@ -56,12 +56,12 @@ router.get('/buscaLivrosTema/:tema', function (req, res, next) {
 
     console.log(tema);
 
-    let instrucaoSql = `select tbLivros.*,tbAutores.nomeAutor
+    let BuscaLivroTema = `select tbLivros.*,tbAutores.nomeAutor
                                             from tbLivros
                                             inner join tbAutores on 
                                             idAutor=fkAutor where temaLivro='${tema}' ;`;
 
-    sequelize.query(instrucaoSql, {
+    sequelize.query(BuscaLivroTema, {
         model: Livros,
         mapToModel: true
     })
@@ -133,7 +133,7 @@ router.get('/buscaLivrosFavoritosTema/:idUsuarioFav/:tema', function (req, res, 
 
     var idUsuarioFav = req.params.idUsuarioFav
     var tema = req.params.tema
-    let instrucaoSql = `select tbLivrosFavoritos.* ,
+    let BuscaLivroFavoritoTemaSql = `select tbLivrosFavoritos.* ,
                                 tbLivros.* ,
                                 tbUsuarios.* ,
                                 tbAutores.*
@@ -145,7 +145,7 @@ router.get('/buscaLivrosFavoritosTema/:idUsuarioFav/:tema', function (req, res, 
      
                                            
 
-    sequelize.query(instrucaoSql, {
+    sequelize.query(BuscaLivroFavoritoTemaSql, {
         model: Livros,
         mapToModel: true
     })
@@ -163,7 +163,7 @@ router.get('/buscaLivrosFavoritosBarra/:idUsuarioFav/:buscaNomeLivro', function 
 
     var idUsuarioFav = req.params.idUsuarioFav
     var buscaNomeLivro = req.params.buscaNomeLivro
-    let instrucaoSql = `select tbLivrosFavoritos.* ,
+    let buscaLivrosFavoritosSql = `select tbLivrosFavoritos.* ,
                                 tbLivros.* ,
                                 tbUsuarios.* ,
                                 tbAutores.*
@@ -175,7 +175,7 @@ router.get('/buscaLivrosFavoritosBarra/:idUsuarioFav/:buscaNomeLivro', function 
      
                                            
 
-    sequelize.query(instrucaoSql, {
+    sequelize.query(buscaLivrosFavoritosSql, {   
         model: Livros,
         mapToModel: true
     })
