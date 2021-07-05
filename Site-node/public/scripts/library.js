@@ -1,7 +1,7 @@
 
     // busca de livros dentro do select por tema
     function buscaLivroTema() {
-        var tema = slcTema.value
+        var tema = slcTema.value;
 
         fetch(`/livro//buscaLivrosTema/${tema}`)
             .then(resposta => {
@@ -9,12 +9,12 @@
                     resposta.json().then(function (resposta) {
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                        if (resposta.length != 0) {
+                        if (resposta.length !== 0) {
 
                             LivroslistaTema(resposta);
                         }
                         else {
-                            alert("Nenhum Livro encontrado")
+                            alert("Nenhum Livro encontrado");
                         }
 
 
@@ -43,12 +43,12 @@
                     resposta.json().then(function (resposta) {
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                        if (resposta.length != 0) {
+                        if (resposta.length !== 0) {
 
                             LivroslistaPesquisa(resposta);
                         }
                         else {
-                            alert("Nenhum Livro encontrado")
+                            alert("Nenhum Livro encontrado");
                         }
 
 
@@ -66,7 +66,7 @@
     function LivroslistaPesquisa(resposta) {
 
         for (let index = 0; index <= resposta.length - 1; index++) {
-            nome = resposta[index].nomeLivro;
+            var nome = resposta[index].nomeLivro;
 
             listaLivros.push(nome);
 
@@ -103,7 +103,7 @@
                             LivroslistaBusca(resposta);
                         }
                         else {
-                            alert("Nenhum Livro encontrado")
+                            alert("Nenhum Livro encontrado");
                         }
 
 
@@ -127,10 +127,10 @@
     // adiciona os livros a pagina
     var listaLivrosBusca = [];
     var listaImagens = [];
-    var listaAutor = []
-    var listaId = []
-    var listaLinkLivro = []
-    var listaFinalizado = []
+    var listaAutor = [];
+    var listaId = [];
+    var listaLinkLivro = [];
+    var listaFinalizado = [];
     function LivroslistaBusca(resposta) {
         trPrimeira.innerHTML = "";
         trSegunda.innerHTML = "";
@@ -146,7 +146,7 @@
             var imagem = resposta[index].linkImagem;
             var nomeAutor = resposta[index].nomeAutor;
             var idLivro = resposta[index].idLivro;
-            var linkLivro = resposta[index].linkLivro
+            var linkLivro = resposta[index].linkLivro;
             
             listaLivrosBusca.push(nome);
             listaImagens.push(imagem)
@@ -170,7 +170,7 @@
             console.log(imagem)
             var nomeAutor = listaAutor[index];
             var idLivro = listaId[index];
-            var linkLivro = listaLinkLivro[index]
+            var linkLivro = listaLinkLivro[index];
            
             console.log(nomeAutor)
             if (index <= 3) {
@@ -217,16 +217,16 @@
 
     }
 
-    var listaLivrosFavoritos = []
+    var listaLivrosFavoritos = [];
     function Favorito(LivroFavorito) {
-        listaLivrosFavoritos = []
+        listaLivrosFavoritos = [];
         listaLivrosFavoritos.push(LivroFavorito)
-        var idUsuario = sessionStorage.id_usuario_meuapp
+        var idUsuario = sessionStorage.id_usuario_meuapp;
         console.log(idUsuario)
        
 
             for (let index = 0; index <= listaLivrosFavoritos.length - 1; index++) {
-                var livroFav = listaLivrosFavoritos[index]
+                var livroFav = listaLivrosFavoritos[index];
 
                 fetch(`/livro/livrosFavoritos/${livroFav}/${idUsuario}`, {
                     method: "POST",
@@ -234,10 +234,10 @@
 
                     if (response.ok) {
 
-                        alert("livro adicionado com sucesso")
+                        alert("livro adicionado com sucesso");
 
                     } else {
-                        alert("Livro ja adicionado aos favoritos")
+                        alert("Livro ja adicionado aos favoritos");
                         console.log('Erro de cadastro!');
                         response.text().then(function (resposta) {
                             div_erro.innerHTML = resposta;
